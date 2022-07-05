@@ -17,11 +17,9 @@ func ruleRouter() http.Handler {
 
 type Rule struct {
 	Type    string `json:"type"`
-	Payload string `json:"payload"`
 	Proxy   string `json:"proxy"`
 }
 
-func getRules(w http.ResponseWriter, r *http.Request) {
 	rawRules := tunnel.Rules()
 
 	rules := []Rule{}
